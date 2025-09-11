@@ -13,7 +13,7 @@ library(GSEABase)
 library(patchwork)
 
 # prepare the dataset with all the annoration needed ---------------------- 
-results <- read_tsv("../../out/table/DE_treatvsBASELINE_pseudobulk_MG_shr.tsv") %>%
+results <- read_tsv("../../out/table/22_DE_pseudobulk_MG_filterExp_shr.tsv") %>%
   split(f = .$conditionVsBASELINE)
 
 # read in the list of terms provided by Aletta

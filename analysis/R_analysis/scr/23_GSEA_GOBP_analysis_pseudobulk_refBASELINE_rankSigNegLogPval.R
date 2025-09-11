@@ -14,7 +14,7 @@ library(GSEABase)
 library(patchwork)
 
 # prepare the dataset with all the annoration needed ---------------------- 
-results <- read_tsv("../../out/table/DE_treatvsBASELINE_pseudobulk_MG_shr.tsv") %>%
+results <- read_tsv("../../out/table/22_DE_pseudobulk_MG_filterExp_shr.tsv") %>%
   split(f = .$conditionVsBASELINE)
 
 # read in the list of terms provided by Aletta
@@ -205,18 +205,18 @@ test %>%
 # check the stats from the subset fo terms provided by Aletta
 test %>%
   filter(gs_exact_source %in% TOI$GO_id) %>%
-  filter(dataset %in% c("myelin_shr","Fe_shr")) %>%
+  filter(dataset %in% c("res_Myelin_shr","res_Fe_shr")) %>%
   dplyr::select(dataset,pathway,NES.pvalue,padj.pvalue,leadingEdge.pvalue) %>%
   arrange(padj.pvalue)
 
 test %>%
   filter(gs_exact_source %in% TOI$GO_id) %>%
-  filter(dataset %in% c("myelin_shr","Fe_shr")) %>%
+  filter(dataset %in% c("res_Myelin_shr","res_Fe_shr")) %>%
   dplyr::select(dataset,pathway,NES.logfc,padj.logfc,leadingEdge.logfc) %>%
   arrange(padj.logfc)
 
 # plot the top 20 for Fe an Myelin
-list_plot <- lapply(c("myelin_shr","Fe_shr"),function(dat){
+list_plot <- lapply(c("res_Myelin_shr","res_Fe_shr"),function(dat){
   global_min <- min(-log(c(test %>%
                              filter(dataset == dat) %>%
                              slice_max(abs(NES.logfc),n = 20) %>%
@@ -245,7 +245,7 @@ list_plot <- lapply(c("myelin_shr","Fe_shr"),function(dat){
     geom_point(aes(size = -log(padj.pvalue),col=direction)) +
     theme_bw() +
     geom_vline(xintercept = 0,col="gray",linetype = "dashed") +
-    scale_color_manual(values = c("red","blue")) +
+    scale_color_manual(values = c("1" = "red","-1" = "blue")) +
     scale_size_continuous(limits = c(global_min, global_max)) +
     coord_cartesian(xlim = c(-3,3)) + 
     ggtitle(paste0("GSEA ", dat," signed NegLogPval ranking"))
@@ -260,7 +260,7 @@ list_plot <- lapply(c("myelin_shr","Fe_shr"),function(dat){
     geom_point(aes(size = -log(padj.logfc),col=direction)) +
     theme_bw() +
     geom_vline(xintercept = 0,col="gray",linetype = "dashed") +
-    scale_color_manual(values = c("red","blue")) +
+    scale_color_manual(values = c("1" = "red","-1" = "blue")) +
     scale_size_continuous(limits = c(global_min, global_max)) +
     coord_cartesian(xlim = c(-3,3)) + 
     ggtitle(paste0("GSEA ", dat," logFC ranking"))
@@ -308,7 +308,7 @@ read_tsv(paste0("../../out/table/23_df_table_GSEA_GOBP_nonredundant_ranklogfc_MG
   filter(pathway %in% c("GOBP_RIBOSOME_BIOGENESIS"))
 
 # plot the top 20 for Fe an Myelin
-list_plot2 <- lapply(c("myelin_shr","Fe_shr"),function(dat){
+list_plot2 <- lapply(c("res_Myelin_shr","res_Fe_shr"),function(dat){
   global_min <- min(-log(c(test2 %>%
                              filter(dataset == dat) %>%
                              slice_max(abs(NES.logfc),n = 20) %>%
@@ -337,7 +337,7 @@ list_plot2 <- lapply(c("myelin_shr","Fe_shr"),function(dat){
     geom_point(aes(size = -log(padj.pvalue),col=direction)) +
     theme_bw() +
     geom_vline(xintercept = 0,col="gray",linetype = "dashed") +
-    scale_color_manual(values = c("red","blue")) +
+    scale_color_manual(values = c("1" = "red","-1" = "blue")) +
     scale_size_continuous(limits = c(global_min, global_max)) +
     coord_cartesian(xlim = c(-3,3)) + 
     ggtitle(paste0("GSEA ", dat," signed NegLogPval ranking"))
@@ -352,7 +352,7 @@ list_plot2 <- lapply(c("myelin_shr","Fe_shr"),function(dat){
     geom_point(aes(size = -log(padj.logfc),col=direction)) +
     theme_bw() +
     geom_vline(xintercept = 0,col="gray",linetype = "dashed") +
-    scale_color_manual(values = c("red","blue")) +
+    scale_color_manual(values = c("1" = "red","-1" = "blue")) +
     scale_size_continuous(limits = c(global_min, global_max)) +
     coord_cartesian(xlim = c(-3,3)) + 
     ggtitle(paste0("GSEA ", dat," logFC ranking"))
@@ -362,4 +362,4 @@ list_plot2 <- lapply(c("myelin_shr","Fe_shr"),function(dat){
 })
 
 wrap_plots(list_plot2)
-# ggsave("../../out/image/23_GSEA_top20_GOBP_Fe_Myelin.pdf",width = 20,height = 10)
+ggsave("../../out/image/23_GSEA_top20_GOBP_nonredundant_Fe_Myelin.pdf",width = 20,height = 10)
