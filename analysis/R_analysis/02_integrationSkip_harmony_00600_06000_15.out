@@ -1,0 +1,313 @@
+An object of class Seurat 
+23960 features across 172024 samples within 1 assay 
+Active assay: RNA (23960 features, 0 variable features)
+[1] 172024
+            used   (Mb) gc trigger    (Mb)   max used    (Mb)
+Ncells   8634674  461.2   14757900   788.2   14757900   788.2
+Vcells 581019447 4432.9 4320782433 32965.0 4715561791 35976.9
+<0 x 0 matrix>
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 172024
+Number of edges: 5172829
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.9232
+Number of communities: 25
+Elapsed time: 97 seconds
+                                                            harmony_1
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCAAGACAAGCC-1  8.613564
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAACTGCTA-1 -2.645262
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACACAACATC-1  2.064401
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGGTCAAG-1  9.567605
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGTCGCAC-1 10.718500
+                                                             harmony_2
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCAAGACAAGCC-1  3.8519480
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAACTGCTA-1 -4.3398921
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACACAACATC-1 -0.5752738
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGGTCAAG-1  3.3240525
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGTCGCAC-1 14.9891139
+                                                             harmony_3
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCAAGACAAGCC-1  0.4446302
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAACTGCTA-1  7.3188943
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACACAACATC-1 13.2576013
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGGTCAAG-1 -1.3134108
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGTCGCAC-1  6.8649396
+                                                            harmony_4
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCAAGACAAGCC-1  2.493816
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAACTGCTA-1 -0.178335
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACACAACATC-1 -9.101552
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGGTCAAG-1  3.004688
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGTCGCAC-1 -7.483050
+                                                             harmony_5
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCAAGACAAGCC-1 -0.7098320
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAACTGCTA-1 -1.3176503
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACACAACATC-1  1.1999344
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGGTCAAG-1 -0.6787984
+W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGTCGCAC-1  1.0832885
+Modularity Optimizer version 1.3.0 by Ludo Waltman and Nees Jan van Eck
+
+Number of nodes: 172024
+Number of edges: 4878554
+
+Running Louvain algorithm...
+Maximum modularity in 10 random starts: 0.9152
+Number of communities: 22
+Elapsed time: 84 seconds
+20 x 10 sparse Matrix of class "dgCMatrix"
+                              
+AL627309.1 . . . . . . . . . .
+AL627309.5 . . . . . . . . . .
+AL669831.2 . . . . . . . . . .
+LINC01409  . 1 1 . . . . . . .
+FAM87B     . . . . . . . . . .
+LINC01128  . . . . . . . . . .
+LINC00115  . . . . . . . . . .
+FAM41C     . . . . . . . . . .
+AL645608.2 . . . . . . . . . .
+SAMD11     . . . . . . . . . .
+NOC2L      . . . . . . . . . .
+KLHL17     . . . . . . . 1 . .
+PLEKHN1    . . . . . . . . . .
+PERM1      . . . . . . . . . .
+AL645608.7 . . . . . . . . . .
+HES4       . 0 0 . 4 . . . 0 1
+ISG15      . . . . 1 . . . 4 .
+AGRN       . . . . 1 . . . . .
+C1orf159   . . . . . . . . . .
+TTLL10     . . . . . . . . . .
+20 x 10 sparse Matrix of class "dgCMatrix"
+                                                                        
+AL627309.1 . .        .         . .         . . .        .        .     
+AL627309.5 . .        .         . .         . . .        .        .     
+AL669831.2 . .        .         . .         . . .        .        .     
+LINC01409  . 1.154965 0.6366169 . .         . . .        .        .     
+FAM87B     . .        .         . .         . . .        .        .     
+LINC01128  . .        .         . .         . . .        .        .     
+LINC00115  . .        .         . .         . . .        .        .     
+FAM41C     . .        .         . .         . . .        .        .     
+AL645608.2 . .        .         . .         . . .        .        .     
+SAMD11     . .        .         . .         . . .        .        .     
+NOC2L      . .        .         . .         . . .        .        .     
+KLHL17     . .        .         . .         . . 1.612003 .        .     
+PLEKHN1    . .        .         . .         . . .        .        .     
+PERM1      . .        .         . .         . . .        .        .     
+AL645608.7 . .        .         . .         . . .        .        .     
+HES4       . 0.000000 0.0000000 . 1.2763340 . . .        0.000000 2.6776
+ISG15      . .        .         . 0.4982689 . . .        1.333595 .     
+AGRN       . .        .         . 0.4982689 . . .        .        .     
+C1orf159   . .        .         . .         . . .        .        .     
+TTLL10     . .        .         . .         . . .        .        .     
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCAAGACAAGCC-1
+SAMD11                                                     -0.05923740
+HES4                                                       -0.36099080
+ISG15                                                      -0.31194480
+TTLL10                                                     -0.01432467
+TNFRSF18                                                   -0.13766488
+TNFRSF4                                                    -0.09830876
+C1QTNF12                                                   -0.03441904
+CFAP74                                                     -0.03818739
+GABRD                                                      -0.02227452
+HES5                                                       -0.32160831
+AL139246.5                                                 -0.13014309
+TNFRSF14                                                   -0.25534568
+AL831784.1                                                 -0.03208516
+AJAP1                                                      -0.13358098
+KCNAB2                                                     -0.28251591
+CHD5                                                        3.52552949
+ACOT7                                                      -0.24073869
+ESPN                                                        0.02025191
+UTS2                                                       -0.03921612
+TNFRSF9                                                    -0.04046634
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAACTGCTA-1
+SAMD11                                                     -0.09918961
+HES4                                                       -0.70391007
+ISG15                                                      -0.58742151
+TTLL10                                                     -0.02750300
+TNFRSF18                                                   -0.11910166
+TNFRSF4                                                    -0.10921649
+C1QTNF12                                                   -0.07800896
+CFAP74                                                     -0.05975511
+GABRD                                                      -0.04878600
+HES5                                                       -0.39063651
+AL139246.5                                                 -0.13026512
+TNFRSF14                                                   -0.20830265
+AL831784.1                                                 -0.07760706
+AJAP1                                                      -0.22581355
+KCNAB2                                                     -0.23436171
+CHD5                                                       -0.47488736
+ACOT7                                                       1.88911005
+ESPN                                                       -0.13686446
+UTS2                                                       -0.04134922
+TNFRSF9                                                    -0.07444421
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCACACAACATC-1
+SAMD11                                                     -0.12914058
+HES4                                                       -1.10548098
+ISG15                                                      -0.82970841
+TTLL10                                                     -0.06075755
+TNFRSF18                                                   -0.26209182
+TNFRSF4                                                    -0.27011989
+C1QTNF12                                                   -0.15490270
+CFAP74                                                     -0.11202022
+GABRD                                                      -0.08549072
+HES5                                                       -0.62785632
+AL139246.5                                                 -0.20643572
+TNFRSF14                                                   -0.28949704
+AL831784.1                                                 -0.08161723
+AJAP1                                                      -0.26997330
+KCNAB2                                                     -0.22989982
+CHD5                                                       -0.50059197
+ACOT7                                                      -0.44141670
+ESPN                                                        4.30745840
+UTS2                                                       -0.04593531
+TNFRSF9                                                    -0.25118430
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGGTCAAG-1
+SAMD11                                                     -0.05558879
+HES4                                                       -0.34915267
+ISG15                                                      -0.29876579
+TTLL10                                                     -0.01328025
+TNFRSF18                                                   -0.14196022
+TNFRSF4                                                    -0.09885309
+C1QTNF12                                                   -0.03050929
+CFAP74                                                     -0.03742016
+GABRD                                                      -0.02073240
+HES5                                                       -0.33542620
+AL139246.5                                                 -0.13491635
+TNFRSF14                                                   -0.25985377
+AL831784.1                                                 -0.02775660
+AJAP1                                                      -0.12773614
+KCNAB2                                                     -0.28548368
+CHD5                                                       -0.42331504
+ACOT7                                                      -0.23022288
+ESPN                                                        0.02669716
+UTS2                                                       -0.03890352
+TNFRSF9                                                    -0.04121491
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCACAGTCGCAC-1
+SAMD11                                                      -0.1712524
+HES4                                                         0.1426168
+ISG15                                                       -0.5401017
+TTLL10                                                      -0.0771740
+TNFRSF18                                                    -0.3112335
+TNFRSF4                                                     -0.3374662
+C1QTNF12                                                    -0.1972901
+CFAP74                                                      -0.1417590
+GABRD                                                       -0.1124456
+HES5                                                        -0.7336195
+AL139246.5                                                  -0.2480810
+TNFRSF14                                                    -0.3398708
+AL831784.1                                                  -0.1257956
+AJAP1                                                       -0.3398077
+KCNAB2                                                      -0.2411795
+CHD5                                                         0.2035926
+ACOT7                                                        1.9594839
+ESPN                                                        -0.5054578
+UTS2                                                        -0.0543979
+TNFRSF9                                                     -0.3299020
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCACATGATAGA-1
+SAMD11                                                     -0.06094319
+HES4                                                       -0.41174712
+ISG15                                                      -0.32416938
+TTLL10                                                     -0.01850776
+TNFRSF18                                                   -0.11713105
+TNFRSF4                                                    -0.09039156
+C1QTNF12                                                   -0.05018596
+CFAP74                                                     -0.04017201
+GABRD                                                      -0.02655575
+HES5                                                       -0.30198726
+AL139246.5                                                 -0.10644648
+TNFRSF14                                                   -0.20391973
+AL831784.1                                                 -0.02972344
+AJAP1                                                      -0.14707417
+KCNAB2                                                     -0.24284225
+CHD5                                                       -0.43836427
+ACOT7                                                      -0.24297016
+ESPN                                                       -0.03172284
+UTS2                                                       -0.03543723
+TNFRSF9                                                    -0.03830810
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCAGTGAGCAGT-1
+SAMD11                                                     -0.12194052
+HES4                                                       -0.78312365
+ISG15                                                      -0.88118856
+TTLL10                                                      0.02692411
+TNFRSF18                                                    0.08066710
+TNFRSF4                                                     0.13535138
+C1QTNF12                                                    0.05033528
+CFAP74                                                     -0.01389754
+GABRD                                                      -0.03043320
+HES5                                                       -0.50601612
+AL139246.5                                                 -0.16519236
+TNFRSF14                                                   -0.16782480
+AL831784.1                                                 -0.18229515
+AJAP1                                                      -0.33266468
+KCNAB2                                                     -0.28622837
+CHD5                                                       -0.36877134
+ACOT7                                                      -0.81740210
+ESPN                                                        0.09534313
+UTS2                                                       -0.05179624
+TNFRSF9                                                     0.13446774
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCAGTGCTTATG-1
+SAMD11                                                     -0.08493987
+HES4                                                       -0.74557148
+ISG15                                                      -0.48663004
+TTLL10                                                     -0.04126038
+TNFRSF18                                                   -0.04925154
+TNFRSF4                                                    -0.08058040
+C1QTNF12                                                   -0.12947236
+CFAP74                                                     -0.05943918
+GABRD                                                      -0.05456736
+HES5                                                       -0.26776119
+AL139246.5                                                 -0.02684573
+TNFRSF14                                                   -0.01211133
+AL831784.1                                                 -0.03919359
+AJAP1                                                       4.90093179
+KCNAB2                                                     -0.08516784
+CHD5                                                       -0.47554349
+ACOT7                                                      -0.31493915
+ESPN                                                       -0.29203910
+UTS2                                                       -0.02342858
+TNFRSF9                                                    -0.05751547
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCAGTTCTCACC-1
+SAMD11                                                     0.079363367
+HES4                                                      -1.040342229
+ISG15                                                      1.159336252
+TTLL10                                                     0.024229813
+TNFRSF18                                                   0.225939876
+TNFRSF4                                                    0.293240271
+C1QTNF12                                                   0.025579810
+CFAP74                                                     0.003892563
+GABRD                                                     -0.010533471
+HES5                                                      -1.093057974
+AL139246.5                                                -0.037342238
+TNFRSF14                                                   0.533546580
+AL831784.1                                                 0.127104746
+AJAP1                                                     -0.235136447
+KCNAB2                                                     0.276357221
+CHD5                                                       0.299514530
+ACOT7                                                      1.483138287
+ESPN                                                      -0.457255096
+UTS2                                                       0.039620914
+TNFRSF9                                                    0.157093493
+           W8_18h_myelin_plus_untreated_multiplexed_AAACCCAGTTTCACTT-1
+SAMD11                                                     -0.07660939
+HES4                                                        2.69585441
+ISG15                                                      -0.42127583
+TTLL10                                                     -0.02338878
+TNFRSF18                                                   -0.02378779
+TNFRSF4                                                    -0.03163292
+C1QTNF12                                                   -0.08021829
+CFAP74                                                     -0.03948471
+GABRD                                                      -0.03772929
+HES5                                                       -0.22764096
+AL139246.5                                                 -0.03756701
+TNFRSF14                                                   -0.05537514
+AL831784.1                                                 -0.04862592
+AJAP1                                                      -0.20897803
+KCNAB2                                                     -0.14255556
+CHD5                                                       -0.46080355
+ACOT7                                                      -0.32917174
+ESPN                                                       -0.14094887
+UTS2                                                       -0.02797945
+TNFRSF9                                                     0.00200219
+[1]  23377 172024
+[1]  23377 172024
+[1]   4000 172024

@@ -1,0 +1,422 @@
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.2     v readr     2.1.4
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.2     v tibble    3.2.1
+v lubridate 1.9.2     v tidyr     1.3.0
+v purrr     1.0.1     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
+which was just loaded, will retire in October 2023.
+Please refer to R-spatial evolution reports for details, especially
+https://r-spatial.org/r/2023/05/15/evolution4.html.
+It may be desirable to make the sf package available;
+package maintainers should consider adding sf to Suggests:.
+The sp package is now running under evolution status 2
+     (status 2 uses the sf package in place of rgdal)
+Attaching SeuratObject
+Warning message:
+package 'SeuratData' was built under R version 4.2.2 
+Loading required package: grid
+========================================
+ComplexHeatmap version 2.15.4
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 12416 anchors
+Filtering anchors
+	Retained 2837 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+Running UMAP projection
+16:17:53 Read 15567 rows
+16:17:53 Processing block 1 of 1
+16:17:53 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:17:53 Initializing by weighted average of neighbor coordinates using 1 thread
+16:17:53 Commencing optimization for 67 epochs, with 467010 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:18:00 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 13361 anchors
+Filtering anchors
+	Retained 3177 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:24:04 Read 12647 rows
+16:24:04 Processing block 1 of 1
+16:24:04 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:24:05 Initializing by weighted average of neighbor coordinates using 1 thread
+16:24:05 Commencing optimization for 67 epochs, with 379410 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:24:10 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 7761 anchors
+Filtering anchors
+	Retained 2322 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:28:01 Read 8828 rows
+16:28:01 Processing block 1 of 1
+16:28:01 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:28:01 Initializing by weighted average of neighbor coordinates using 1 thread
+16:28:01 Commencing optimization for 67 epochs, with 264840 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:28:06 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 10971 anchors
+Filtering anchors
+	Retained 3020 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:33:01 Read 10123 rows
+16:33:01 Processing block 1 of 1
+16:33:01 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:33:01 Initializing by weighted average of neighbor coordinates using 1 thread
+16:33:01 Commencing optimization for 67 epochs, with 303690 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:33:06 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 9500 anchors
+Filtering anchors
+	Retained 2029 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:38:09 Read 19906 rows
+16:38:09 Processing block 1 of 1
+16:38:09 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:38:09 Initializing by weighted average of neighbor coordinates using 1 thread
+16:38:09 Commencing optimization for 67 epochs, with 597180 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:38:17 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 11179 anchors
+Filtering anchors
+	Retained 2066 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:43:42 Read 20193 rows
+16:43:42 Processing block 1 of 1
+16:43:42 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:43:42 Initializing by weighted average of neighbor coordinates using 1 thread
+16:43:42 Commencing optimization for 67 epochs, with 605790 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:43:51 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 15094 anchors
+Filtering anchors
+	Retained 2500 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:50:55 Read 26219 rows
+16:50:55 Processing block 1 of 1
+16:50:55 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:50:55 Initializing by weighted average of neighbor coordinates using 1 thread
+16:50:55 Commencing optimization for 67 epochs, with 786570 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:51:09 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 11082 anchors
+Filtering anchors
+	Retained 3105 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+16:56:04 Read 12291 rows
+16:56:04 Processing block 1 of 1
+16:56:04 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+16:56:04 Initializing by weighted average of neighbor coordinates using 1 thread
+16:56:04 Commencing optimization for 67 epochs, with 368730 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:56:10 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 12566 anchors
+Filtering anchors
+	Retained 2370 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+17:01:58 Read 24682 rows
+17:01:58 Processing block 1 of 1
+17:01:58 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+17:01:59 Initializing by weighted average of neighbor coordinates using 1 thread
+17:01:59 Commencing optimization for 67 epochs, with 740460 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:02:11 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 10646 anchors
+Filtering anchors
+	Retained 1765 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+17:07:28 Read 27375 rows
+17:07:28 Processing block 1 of 1
+17:07:28 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+17:07:28 Initializing by weighted average of neighbor coordinates using 1 thread
+17:07:28 Commencing optimization for 67 epochs, with 821250 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:07:41 Finished
+Projecting cell embeddings
+Finding neighborhoods
+Finding anchors
+	Found 14355 anchors
+Filtering anchors
+	Retained 4018 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Computing nearest neighbors
+Running UMAP projection
+17:13:35 Read 10280 rows
+17:13:35 Processing block 1 of 1
+17:13:35 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 30
+17:13:35 Initializing by weighted average of neighbor coordinates using 1 thread
+17:13:35 Commencing optimization for 67 epochs, with 308400 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+17:13:40 Finished
+Warning message:
+`invoke()` is deprecated as of rlang 0.4.0.
+Please use `exec()` or `inject()` instead.
+This warning is displayed once every 8 hours. 

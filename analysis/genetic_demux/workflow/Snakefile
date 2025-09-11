@@ -1,0 +1,17 @@
+'''
+Main Snakefile. Demultiplexing of the 10X. This workflow run the snplite workflow followed by vireo for the demultiplexing of genetic identity
+'''
+
+# Path of the config file
+configfile: 'config/config.yaml'
+
+# Rules to execute the workflow
+include: 'rules/analysis.smk'
+
+# Master rule that launches the workflow
+rule all:
+    '''
+    Dummy rule to automatically generate up to the vireo demultiplexing assessment.
+    '''
+    input:
+        expand(rules.vireo_cellsnp_mode1a.output.folder, sample=config['SAMPLES'])

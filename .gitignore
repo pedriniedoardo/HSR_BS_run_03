@@ -1,0 +1,19 @@
+# folder
+out/
+data/
+.Rproj.user/
+.snakemake/
+results/
+images/
+results_3donor/
+results_6donor/
+logs/
+logs_slurm/
+resources/
+
+# files
+.Rhistory
+.RData
+.Rproj.user
+.Ruserdata
+*.vcf.gz

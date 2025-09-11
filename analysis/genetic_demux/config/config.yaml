@@ -1,0 +1,53 @@
+# Configuration options of cellsnplite-vireo pipeline for the demultiplexing of scRNAseq data
+
+# test string
+test: 'resources/test.txt'
+
+# Location of the VCF file used fro the demux
+# REGION: 'resources/genome1K.subset.hg19.vcf.gz'
+REGION: 'resources/genome1K.phase3.SNP_AF5e2.chr1toX.hg38.vcf.gz'
+# REGION: 'resources/genome1K.phase3.SNP_AF5e4.chr1toX.hg38.vcf.gz'
+
+# parameters
+# cellsnplite_p: 70
+cellsnplite_minCOUNT: 20
+random_seed: 2
+
+# RAM parameters
+cellsnp_RAM: 16000
+vireo_RAM: 16000
+
+# CPU parameters
+cellsnp_CPU: 4
+vireo_CPU: 4
+
+
+# list of samples
+# SAMPLES: ['highCO2_sample1', 'highCO2_sample2', 'highCO2_sample3', 'lowCO2_sample1', 'lowCO2_sample2', 'lowCO2_sample3']
+
+# Sample names
+SAMPLES:
+  test_small:
+    donor_N: 4
+  W8_18h_myelin_plus_untreated_multiplexed:
+    donor_N: 2
+  W8_24h_CSF-MS_plus_untreated_multiplexed:
+    donor_N: 3
+  W8_24h_CSF-controls_plus_untreated_multiplexed:
+    donor_N: 3
+  W8_24h_cytokines:
+    donor_N: 3
+  W8_48h_CSF-MS_multiplexed:
+    donor_N: 3
+  W8_48h_TBHP_and_TBHP-dasatinib_multiplexed:
+    donor_N: 3
+  W8_6h_Fe_RSL3:
+    donor_N: 3
+  hBS_CTR4_MG:
+    donor_N: 6
+  hBS_RR16_MG:
+    donor_N: 6
+  hBS_RR24_MG:
+    donor_N: 6
+  hBS_RR25_MG:
+    donor_N: 6

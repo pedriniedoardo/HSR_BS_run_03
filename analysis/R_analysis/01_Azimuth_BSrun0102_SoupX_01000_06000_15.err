@@ -1,0 +1,689 @@
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.2     v readr     2.1.4
+v forcats   1.0.0     v stringr   1.5.0
+v ggplot2   3.4.2     v tibble    3.2.1
+v lubridate 1.9.2     v tidyr     1.3.0
+v purrr     1.0.1     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
+which was just loaded, will retire in October 2023.
+Please refer to R-spatial evolution reports for details, especially
+https://r-spatial.org/r/2023/05/15/evolution4.html.
+It may be desirable to make the sf package available;
+package maintainers should consider adding sf to Suggests:.
+The sp package is now running under evolution status 2
+     (status 2 uses the sf package in place of rgdal)
+Attaching SeuratObject
+Registered S3 method overwritten by 'SeuratDisk':
+  method            from  
+  as.sparse.H5Group Seurat
+Attaching shinyBS
+Warning message:
+package 'SeuratData' was built under R version 4.2.2 
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Warning: The default method for RunUMAP has changed from calling Python UMAP via reticulate to the R-native UWOT using the cosine metric
+To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
+This message will be shown once per session
+Running UMAP projection
+16:37:18 Read 13044 rows
+16:37:18 Processing block 1 of 1
+16:37:18 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:37:18 Initializing by weighted average of neighbor coordinates using 1 thread
+16:37:18 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:37:25 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 12.478622674942
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:38:27 Read 13044 rows
+16:38:27 Processing block 1 of 1
+16:38:27 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:38:28 Initializing by weighted average of neighbor coordinates using 1 thread
+16:38:28 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:38:34 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 11.9364552497864
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:39:38 Read 13044 rows
+16:39:38 Processing block 1 of 1
+16:39:38 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:39:38 Initializing by weighted average of neighbor coordinates using 1 thread
+16:39:38 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:39:44 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 11.9963653087616
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:40:43 Read 13044 rows
+16:40:43 Processing block 1 of 1
+16:40:43 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:40:43 Initializing by weighted average of neighbor coordinates using 1 thread
+16:40:43 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:40:49 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 12.4421896934509
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:41:50 Read 13044 rows
+16:41:50 Processing block 1 of 1
+16:41:50 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:41:50 Initializing by weighted average of neighbor coordinates using 1 thread
+16:41:50 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:41:56 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 12.413676738739
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:42:58 Read 13044 rows
+16:42:58 Processing block 1 of 1
+16:42:58 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:42:58 Initializing by weighted average of neighbor coordinates using 1 thread
+16:42:58 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:43:04 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 11.8906226158142
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:44:06 Read 13044 rows
+16:44:06 Processing block 1 of 1
+16:44:06 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:44:06 Initializing by weighted average of neighbor coordinates using 1 thread
+16:44:06 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:44:12 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 11.9697723388672
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:45:13 Read 13044 rows
+16:45:13 Processing block 1 of 1
+16:45:13 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:45:13 Initializing by weighted average of neighbor coordinates using 1 thread
+16:45:13 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:45:20 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 12.1007096767426
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:46:20 Read 13044 rows
+16:46:20 Processing block 1 of 1
+16:46:20 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:46:20 Initializing by weighted average of neighbor coordinates using 1 thread
+16:46:20 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:46:26 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 12.6458995342255
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:47:27 Read 13044 rows
+16:47:27 Processing block 1 of 1
+16:47:27 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:47:27 Initializing by weighted average of neighbor coordinates using 1 thread
+16:47:27 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:47:33 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 12.6305658817291
+detected inputs from HUMAN with id type Gene.name
+reference rownames detected HUMAN with id type Gene.name
+Using reference SCTModel to calculate pearson residuals
+Determine variable features
+Setting min_variance to:  -Inf
+Calculating residuals of type pearson for 1959 genes
+  |                                                                              |                                                                      |   0%  |                                                                              |=======================                                               |  33%  |                                                                              |===============================================                       |  67%  |                                                                              |======================================================================| 100%
+Set default assay to refAssay
+Normalizing query using reference SCT model
+Projecting cell embeddings
+Finding query neighbors
+Finding neighborhoods
+Finding anchors
+	Found 9650 anchors
+Finding integration vectors
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Predicting cell labels
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from predictionscoreannotation.l1_ to predictionscoreannotationl1_
+
+Integrating dataset 2 with reference dataset
+Finding integration vectors
+Integrating data
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: Keys should be one or more alphanumeric characters followed by an underscore, setting key from integrated_dr_ to integrateddr_
+Warning: All keys should be one or more alphanumeric characters followed by an underscore '_', setting key to integrateddr_
+Computing nearest neighbors
+Running UMAP projection
+16:48:33 Read 13044 rows
+16:48:33 Processing block 1 of 1
+16:48:33 Commencing smooth kNN distance calibration using 1 thread with target n_neighbors = 20
+16:48:33 Initializing by weighted average of neighbor coordinates using 1 thread
+16:48:33 Commencing optimization for 67 epochs, with 260880 positive edges
+Using method 'umap'
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+16:48:39 Finished
+Warning: No assay specified, setting assay as RNA by default.
+Projecting reference PCA onto query
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Projecting back the query cells into original PCA space
+Finding integration vector weights
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Computing scores:
+    Finding neighbors of original query cells
+    Finding neighbors of transformed query cells
+    Computing query SNN
+    Determining bandwidth and computing transition probabilities
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+Total elapsed time: 11.9852592945099
+There were 11 warnings (use warnings() to see them)
