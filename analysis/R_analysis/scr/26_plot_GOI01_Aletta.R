@@ -1,5 +1,5 @@
 # AIM ---------------------------------------------------------------------
-# plot LGALS3, LAMP1 and TSPO expression for Aletta's project
+# plot LGALS3, LAMP1, TSPO, TFEB, MYC expression for Aletta's project
 
 # libraries ---------------------------------------------------------------
 library(Seurat)
@@ -23,7 +23,7 @@ DimPlot(data.combined,label = T,raster = T,group.by = "harmonized_donor2")
 # str_subset(rownames(data.combined),pattern = "HIF")
 # define the gene of interest GOI
 # GOI <- c("Irf7","Ddx58")
-GOI <- c("LGALS3","LAMP1","TSPO")
+GOI <- c("LGALS3","LAMP1","TSPO","TFEB","MYC")
 
 table(data.combined@meta.data$expertAnno.l1)
 
@@ -146,12 +146,12 @@ FeaturePlot(data.combined,features = GOI,split.by = "treat_full",raster = T,orde
 
 # do the same using Seurat
 FeaturePlot(data.combined,features = GOI,raster = T,order = T)
-ggsave("../../out/image/26_UMAPSeurat_annotationConfident_GOI01_Aletta_count.pdf",width = 12,height = 10)
+ggsave("../../out/image/26_UMAPSeurat_annotationConfident_GOI01_Aletta_count.pdf",width = 12,height = 18)
 
 # try plotting gene expression with Nebulosa
 GOI_subset <- str_subset(string = GOI,pattern = "GPR32",negate = T)
 p01 <- plot_density(data.combined,features = GOI_subset,reduction = "umap")
-ggsave(plot = p01,filename = "../../out/image/26_UMAPSeuratNebulosa_annotationConfident_GOI01_Aletta_count.pdf",width = 15,height = 5)
+ggsave(plot = p01,filename = "../../out/image/26_UMAPSeuratNebulosa_annotationConfident_GOI01_Aletta_count.pdf",width = 15,height = 10)
 
 # try to depict the average expression
 df_avg <- average_GOI$RNA %>%
@@ -185,7 +185,7 @@ df_avg |>
   theme(strip.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~gene,scales = "free")
-ggsave("../../out/image/26_avgExp_annotationConfident_GOI01_Aletta.pdf",width = 15,height = 5)
+ggsave("../../out/image/26_avgExp_annotationConfident_GOI01_Aletta.pdf",width = 15,height = 10)
 
 # plot splitting by treat full
 df_avg |>
