@@ -23,7 +23,7 @@ DimPlot(data.combined,label = T,raster = T,group.by = "harmonized_donor2")
 # str_subset(rownames(data.combined),pattern = "HIF")
 # define the gene of interest GOI
 # GOI <- c("Irf7","Ddx58")
-GOI <- c("LGALS3","LAMP1","TSPO","TFEB","MYC")
+GOI <- c("LGALS3","LAMP1","TSPO","TFEB","MYC","FTH1")
 
 table(data.combined@meta.data$expertAnno.l1)
 
