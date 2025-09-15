@@ -83,6 +83,12 @@ DefaultAssay(data.combined) <- "RNA"
 
 average_GOI <- AverageExpression(data.combined,features = GOI,group.by = c("group"))
 
+# Aletta requested also the everage expression across all the features
+average_GOI_all <- AverageExpression(data.combined,group.by = c("group"))
+average_GOI_all %>%
+  .$RNA %>%
+  saveRDS("../../out/object/26_average_expression_all.rds")
+
 # expression distribution -------------------------------------------------
 # crop the 0 expressing cells
 df_exp %>%
