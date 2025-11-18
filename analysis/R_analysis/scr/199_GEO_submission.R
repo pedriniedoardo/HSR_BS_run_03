@@ -59,3 +59,7 @@ scobj@meta.data %>%
 # export the normalized reads
 GetAssayData(sobj_new,assay = "RNA",slot = "data") %>%
   saveRDS("../../out/object/normCount_GEOsubmission.rds")
+
+# export the raw reads
+GetAssayData(sobj_new,assay = "RNA",slot = "count") %>%
+  saveRDS("../../out/object/rawCount_GEOsubmission.rds")
