@@ -342,3 +342,151 @@ df_avg %>%
   facet_wrap(~expertAnno.l1,nrow=1)
 # scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
 ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_treat_scale.pdf",width = 14,height = 3)
+
+
+# -------------------------------------------------------------------------
+# relative to Elif poster, martina suggested to the following modifications
+# for the general trend of everage expression, remove the THBP treatment
+# aggregate the MS conditions without splitting by time points
+
+# show the groups
+data.combined@meta.data %>%
+  select(treat,expertAnno.l1,harmonized_donor2) %>%
+  mutate(treat = as.factor(treat),
+         expertAnno.l1 = as.factor(expertAnno.l1),
+         harmonized_donor2 = as.factor(harmonized_donor2)) %>%
+  summary()
+
+# filter out the samples from `doublet` and `unassigned`
+data.combined_sub <- subset(data.combined,subset = harmonized_donor2 %in% c("donRR16","donRR24","donRR25") & treat != "TBHP")
+
+# generate the covariate for the aggregation
+data.combined_sub$group2 <- paste0(data.combined_sub$treat,"-",data.combined_sub$expertAnno.l1,"-",data.combined_sub$harmonized_donor2)
+
+# confirm the update
+data.combined_sub@meta.data %>%
+  select(harmonized_donor2,treat) %>%
+  mutate(harmonized_donor2 = as.factor(harmonized_donor2),
+         treat = as.factor(treat),) %>%
+  summary()
+
+# data.combined$group2 <- paste0(data.combined$harmonized_donor2,".",data.combined$treat,".",data.combined$cell_type2)
+Idents(data.combined_sub) <- "group"
+DefaultAssay(data.combined_sub) <- "RNA"
+
+average_GOI2 <- AverageExpression(data.combined_sub,features = GOI,group.by = c("group2"))
+
+df_avg2 <- average_GOI2$RNA %>%
+  data.frame() %>%
+  rownames_to_column("gene") %>%
+  mutate(gene = GOI) |> 
+  pivot_longer(names_to = "group2",values_to = "avg_exp",-gene) %>%
+  # filter(!str_detect(group,pattern="doublet|unassigned")) |> 
+  mutate(treat_full = str_extract(group2,pattern = c("myelin|CSF.ctrl|CSF.MS|cytokine|Fe|BASELINE"))) |> 
+  mutate(donor = str_extract(group2,pattern = c("donRR16|donRR25|donRR24" ))) |> 
+  mutate(expertAnno.l1 = str_extract(group2,pattern = c("GLIA_IMM|OLIGO|NEU|PROG|MG|ASTRO|OPC"))) %>%
+  mutate(avg_exp_log1p = log1p(avg_exp))
+
+# make the general plot
+df_avg2 |>
+  # ggplot(aes(x=NMDA_time,y=count)) + 
+  ggplot(aes(x=treat_full,y=avg_exp))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_point(position = position_jitter(width = 0.1),alpha = 0.6)+
+  # geom_col()+
+  # facet_wrap(~cell_type2,scales = "free")+
+  theme_bw()+
+  theme(axis.text.x = element_text(hjust = 1,angle = 90))+
+  theme(strip.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA))+
+  facet_wrap(~gene,scales = "free") +
+  scale_y_continuous(trans = "log1p")
+ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_treat_general2.pdf",width = 6,height = 4)
+
+# generate the univariate analysis for the expression by controlling for the cell type and donor, use as reference the BASELINE
+res_lm01 <- lm(data = df_avg2,formula = avg_exp~donor + expertAnno.l1 + treat_full)
+summary(res_lm01)
+
+res_lm02 <- lm(data = df_avg2,formula = avg_exp_log1p~donor + expertAnno.l1 + treat_full)
+summary(res_lm02)
+
+# try with random variable for the donor
+dependent <- "avg_exp"
+# explanatory <- c("expertAnno.l1","treat_full")
+explanatory <- c("treat_full","expertAnno.l1")
+
+# both are the same the same as:
+# random_effect <- "(1 | donor)"
+random_effect <- "(1 | donor)"
+
+df_avg2 %>% 
+  finalfit(dependent,
+           explanatory, 
+           random_effect = random_effect,
+           metrics = TRUE)
+
+df_avg2 %>%
+  finalfit::coefficient_plot(
+  dependent = dependent,
+  explanatory = explanatory,
+  random_effect = random_effect
+)
+
+# try with random variable for the donor with log expression data
+dependent0 <- "avg_exp_log1p"
+# explanatory <- c("expertAnno.l1","treat_full")
+explanatory0 <- c("treat_full","expertAnno.l1")
+
+# both are the same the same as:
+# random_effect <- "(1 | donor)"
+random_effect0 <- "(1 | donor)"
+
+df_avg2 %>% 
+  finalfit(dependent0,
+           explanatory0, 
+           random_effect = random_effect0,
+           metrics = TRUE)
+
+df_avg2 %>%
+  finalfit::coefficient_plot(
+    dependent = dependent0,
+    explanatory = explanatory0,
+    random_effect = random_effect
+  )
+
+# try with all fixed effects
+dependent2 <- "avg_exp"
+# explanatory <- c("expertAnno.l1","treat_full")
+explanatory2 <- c("donor","treat_full","expertAnno.l1")
+
+df_avg2 %>% 
+  finalfit(dependent2,
+           explanatory2, 
+           metrics = TRUE)
+
+df_avg2 %>%
+  finalfit::coefficient_plot(
+    dependent = dependent2,
+    explanatory = explanatory2
+  )
+
+# try with all fixed effects and log expression
+dependent3 <- "avg_exp_log1p"
+# explanatory <- c("expertAnno.l1","treat_full")
+explanatory3 <- c("donor","treat_full","expertAnno.l1")
+
+df_avg2 %>% 
+  finalfit(dependent3,
+           explanatory3, 
+           metrics = TRUE)
+
+pdf("../../out/image/31_model_DNMT3A.pdf",width = 10,height = 5)
+df_avg2 %>%
+  finalfit::coefficient_plot(
+    dependent = dependent3,
+    explanatory = explanatory3
+  )
+dev.off()
+
+# -------------------------------------------------------------------------
+
