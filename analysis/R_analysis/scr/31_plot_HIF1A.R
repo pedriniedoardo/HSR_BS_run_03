@@ -1,5 +1,5 @@
 # AIM ---------------------------------------------------------------------
-# explore the expression of DNMT3A in the whole dataset
+# explore the expression of HIF1A in the whole dataset
 
 # libraries ---------------------------------------------------------------
 library(Seurat)
@@ -23,7 +23,7 @@ DimPlot(data.combined,label = T,raster = T,group.by = "harmonized_donor2")
 # str_subset(rownames(data.combined),pattern = "HIF")
 # define the gene of interest GOI
 # GOI <- c("Irf7","Ddx58")
-GOI <- c("DNMT3A")
+GOI <- c("HIF1A")
 
 table(data.combined@meta.data$expertAnno.l1)
 
@@ -121,11 +121,11 @@ df_tot %>%
   # theme(strip.background = element_blank(),
   #       panel.border = element_rect(colour = "black", fill = NA))
   theme(strip.background = element_blank())
-ggsave("../../out/image/31_UMAPggplot_annotationConfident_DNMT3A_count.pdf",width = 13,height = 12)
+ggsave("../../out/image/31_UMAPggplot_annotationConfident_HIF1A_count.pdf",width = 13,height = 12)
 
 # do the same using Seurat
 FeaturePlot(data.combined,features = GOI,split.by = "treat_full",raster = T,order = T,ncol = 3)
-# ggsave("../../out/image/06_UMAPSeurat_annotationConfident_DNMT3A_count.pdf",width = 25,height = 3)
+# ggsave("../../out/image/06_UMAPSeurat_annotationConfident_HIF1A_count.pdf",width = 25,height = 3)
 
 df_tot %>%
   # filter(NMDA_time%in%c("NMDA_00","NMDA_03","NMDA_06","NMDA_12","NMDA_24")) %>%
@@ -138,14 +138,14 @@ df_tot %>%
   # theme(strip.background = element_blank(),
   #       panel.border = element_rect(colour = "black", fill = NA))
   theme(strip.background = element_blank())
-ggsave("../../out/image/31_UMAPggplot_annotationConfident_DNMT3A_count2.pdf",width = 6,height = 5)
+ggsave("../../out/image/31_UMAPggplot_annotationConfident_HIF1A_count2.pdf",width = 6,height = 5)
 
 # do the same using Seurat
 FeaturePlot(data.combined,features = GOI,raster = T,order = T)
 
 # try nebulosa option
 plot_density(data.combined, GOI,reduction = "umap")
-ggsave("../../out/image/31_UMAPSeurat_annotationConfident_DNMT3A_countNebulosa.pdf",width = 6,height = 5)
+ggsave("../../out/image/31_UMAPSeurat_annotationConfident_HIF1A_countNebulosa.pdf",width = 6,height = 5)
 
 df_tot %>%
   # filter(NMDA_time%in%c("NMDA_00","NMDA_03","NMDA_06","NMDA_12","NMDA_24")) %>%
@@ -159,7 +159,7 @@ df_tot %>%
   # theme(strip.background = element_blank(),
   #       panel.border = element_rect(colour = "black", fill = NA))
   theme(strip.background = element_blank())
-# ggsave("../../out/image/31_UMAPggplot_annotationConfident_DNMT3A_count_alt.pdf",width = 13,height = 12)
+# ggsave("../../out/image/31_UMAPggplot_annotationConfident_HIF1A_count_alt.pdf",width = 13,height = 12)
 
 # by min max normalized counts
 df_tot %>%
@@ -173,7 +173,7 @@ df_tot %>%
   # theme(strip.background = element_blank(),
   #       panel.border = element_rect(colour = "black", fill = NA))
   theme(strip.background = element_blank())
-# ggsave("../../out/image/31_UMAPggplot_annotationConfident_DNMT3A_minmax.pdf",width = 13,height = 12)
+# ggsave("../../out/image/31_UMAPggplot_annotationConfident_HIF1A_minmax.pdf",width = 13,height = 12)
 
 # plot the category. being 0 or non zero per cell
 df_tot %>%
@@ -190,7 +190,7 @@ df_tot %>%
   # theme(strip.background = element_blank(),
   #       panel.border = element_rect(colour = "black", fill = NA))
   theme(strip.background = element_blank())
-# ggsave("../../out/image/31_UMAPggplot_annotationConfident_DNMT3A_proppos.pdf",width = 13,height = 12)
+# ggsave("../../out/image/31_UMAPggplot_annotationConfident_HIF1A_proppos.pdf",width = 13,height = 12)
 
 df_tot %>%
   # filter(NMDA_time%in%c("NMDA_00","NMDA_03","NMDA_06","NMDA_12","NMDA_24","NMDA_36")) %>%
@@ -206,7 +206,8 @@ df_tot %>%
   # theme(strip.background = element_blank(),
   #       panel.border = element_rect(colour = "black", fill = NA))
   theme(strip.background = element_blank())
-# ggsave("../../out/image/31_UMAPggplot_annotationConfident_DNMT3A_proppos2.pdf",width = 6,height = 5)
+
+# ggsave("../../out/image/31_UMAPggplot_annotationConfident_HIF1A_proppos2.pdf",width = 6,height = 5)
 
 # violin plot for GOI expression use macro categories
 df_tot %>%
@@ -222,7 +223,7 @@ df_tot %>%
   theme(axis.text.x = element_text(hjust = 1,angle = 90)) +
   theme(strip.background = element_blank(),
         panel.border = element_rect(colour = "black", fill = NA))
-# ggsave("../../out/image/31_violin_annotationConfident_DNMT3A.pdf",width = 15,height = 10)
+# ggsave("../../out/image/31_violin_annotationConfident_HIF1A.pdf",width = 15,height = 10)
 
 # try to depict the average expression there is roughly one sample per condition
 df_avg <- average_GOI$RNA %>%
@@ -270,7 +271,7 @@ df_avg |>
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~gene,scales = "free")+
   scale_y_continuous(trans = "log1p")
-ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_celltype_general.pdf",width = 6,height = 4)
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_celltype_general.pdf",width = 6,height = 4)
 
 # do the same as above but split by condition
 df_avg |>
@@ -286,7 +287,7 @@ df_avg |>
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~gene,scales = "free") +
   scale_y_continuous(trans = "log1p")
-ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_treat_general.pdf",width = 6,height = 4)
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_treat_general.pdf",width = 6,height = 4)
 
 # plot splitting by treat full
 df_avg |>
@@ -301,7 +302,7 @@ df_avg |>
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~expertAnno.l1,scales = "free")
 # scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
-# ggsave("../../out/image/06_dotplot_annotationConfident_DNMT3A_expressionAvg_treatFull.pdf",width = 9,height = 9)
+# ggsave("../../out/image/06_dotplot_annotationConfident_HIF1A_expressionAvg_treatFull.pdf",width = 9,height = 9)
 
 # plot splitting by treat
 df_avg |>
@@ -317,7 +318,7 @@ df_avg |>
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~expertAnno.l1,scales = "free")
 # scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
-ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_treat.pdf",width = 9,height = 9)
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_treat.pdf",width = 9,height = 9)
 
 # try to keep the same scale
 # calculate the median per annotation
@@ -341,7 +342,7 @@ df_avg %>%
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~expertAnno.l1,nrow=1)
 # scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
-ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_treat_scale.pdf",width = 14,height = 3)
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_treat_scale.pdf",width = 14,height = 3)
 
 
 # -------------------------------------------------------------------------
@@ -401,7 +402,37 @@ df_avg2 |>
         panel.border = element_rect(colour = "black", fill = NA))+
   facet_wrap(~gene,scales = "free") +
   scale_y_continuous(trans = "log1p")
-ggsave("../../out/image/31_dotplot_annotationConfident_DNMT3A_expressionAvg_treat_general2.pdf",width = 6,height = 4)
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_treat_general2.pdf",width = 6,height = 4)
+
+df_avg2 |>
+  # ggplot(aes(x=NMDA_time,y=count)) + 
+  ggplot(aes(x=expertAnno.l1,y=avg_exp))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_point(position = position_jitter(width = 0.1),alpha = 0.6)+
+  # geom_col()+
+  # facet_wrap(~cell_type2,scales = "free")+
+  theme_bw()+
+  theme(axis.text.x = element_text(hjust = 1,angle = 90))+
+  theme(strip.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA))+
+  facet_wrap(~gene,scales = "free") +
+  scale_y_continuous(trans = "log1p")
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_celltype_general2.pdf",width = 6,height = 4)
+
+df_avg2 |>
+  # ggplot(aes(x=NMDA_time,y=count)) + 
+  ggplot(aes(x=treat_full,y=avg_exp))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_point(position = position_jitter(width = 0.1),alpha = 0.6)+
+  # geom_col()+
+  # facet_wrap(~cell_type2,scales = "free")+
+  theme_bw()+
+  theme(axis.text.x = element_text(hjust = 1,angle = 90))+
+  theme(strip.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA))+
+  facet_wrap(expertAnno.l1~gene,scales = "free") +
+  scale_y_continuous(trans = "log1p")
+ggsave("../../out/image/31_dotplot_annotationConfident_HIF1A_expressionAvg_celltypeSplitTreat_general2.pdf",width = 9,height = 9)
 
 # generate the univariate analysis for the expression by controlling for the cell type and donor, use as reference the BASELINE
 res_lm01 <- lm(data = df_avg2,formula = avg_exp~donor + expertAnno.l1 + treat_full)
@@ -427,10 +458,10 @@ df_avg2 %>%
 
 df_avg2 %>%
   finalfit::coefficient_plot(
-  dependent = dependent,
-  explanatory = explanatory,
-  random_effect = random_effect
-)
+    dependent = dependent,
+    explanatory = explanatory,
+    random_effect = random_effect
+  )
 
 # try with random variable for the donor with log expression data
 dependent0 <- "avg_exp_log1p"
@@ -480,7 +511,7 @@ df_avg2 %>%
            explanatory3, 
            metrics = TRUE)
 
-pdf("../../out/image/31_model_DNMT3A.pdf",width = 10,height = 5)
+pdf("../../out/image/31_model_HIF1A.pdf",width = 10,height = 5)
 df_avg2 %>%
   finalfit::coefficient_plot(
     dependent = dependent3,
@@ -488,37 +519,100 @@ df_avg2 %>%
   )
 dev.off()
 
-# run the model independently for each cell type
+# check the correlation between genes -------------------------------------
+# martina also asked to check if the expression of HIF1A and DNMT3A
 
-# try with all fixed effects and log expression
-dependent4 <- "avg_exp_log1p"
-# explanatory <- c("expertAnno.l1","treat_full")
-explanatory4 <- c("donor","treat_full")
+# filter out the samples from `doublet` and `unassigned`
+data.combined_sub <- subset(data.combined,subset = harmonized_donor2 %in% c("donRR16","donRR24","donRR25") & treat != "TBHP")
 
-list_test4 <- df_avg2 %>%
-  split(f = .$expertAnno.l1) %>%
-  lapply(function(df){
-    df %>% 
-      finalfit(dependent4,
-               explanatory4, 
-               metrics = TRUE)
-  })
+# generate the covariate for the aggregation
+data.combined_sub$group2 <- paste0(data.combined_sub$treat,"-",data.combined_sub$expertAnno.l1,"-",data.combined_sub$harmonized_donor2)
 
-list_test4$MG
+# confirm the update
+data.combined_sub@meta.data %>%
+  select(harmonized_donor2,treat) %>%
+  mutate(harmonized_donor2 = as.factor(harmonized_donor2),
+         treat = as.factor(treat),) %>%
+  summary()
 
-lit_df <- df_avg2 %>%
+# data.combined$group2 <- paste0(data.combined$harmonized_donor2,".",data.combined$treat,".",data.combined$cell_type2)
+Idents(data.combined_sub) <- "group"
+DefaultAssay(data.combined_sub) <- "RNA"
+
+average_GOI3 <- AverageExpression(data.combined_sub,features = c("HIF1A","DNMT3A"),group.by = c("group2"))
+
+df_avg3 <- average_GOI3$RNA %>%
+  data.frame() %>%
+  rownames_to_column("gene") %>%
+  pivot_longer(names_to = "group2",values_to = "avg_exp",-gene) %>%
+  # filter(!str_detect(group,pattern="doublet|unassigned")) |> 
+  mutate(treat_full = str_extract(group2,pattern = c("myelin|CSF.ctrl|CSF.MS|cytokine|Fe|BASELINE"))) |> 
+  mutate(donor = str_extract(group2,pattern = c("donRR16|donRR25|donRR24" ))) |> 
+  mutate(expertAnno.l1 = str_extract(group2,pattern = c("GLIA_IMM|OLIGO|NEU|PROG|MG|ASTRO|OPC"))) %>%
+  mutate(avg_exp_log1p = log1p(avg_exp))
+
+# check the correlation in the dataset
+df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p) %>%
+  ggplot(aes(x = HIF1A,y = DNMT3A)) + geom_point() + theme_bw() + geom_smooth(method = "lm")
+ggsave("../../out/image/31_correlation_HIF_DNMT_global.pdf",width = 4,height = 4)
+
+# run the stat
+test <- df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p)
+
+cor.test(test$HIF1A,test$DNMT3A) %>%
+  broom::tidy()
+  
+# try to split by cell type
+df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p) %>%
+  ggplot(aes(x = HIF1A,y = DNMT3A)) + geom_point() + theme_bw() + geom_smooth(method = "lm") + facet_wrap(~expertAnno.l1,scales="free") + theme(strip.background = element_blank())
+ggsave("../../out/image/31_correlation_HIF_DNMT_SplitCellType.pdf",width = 9,height = 9)
+
+# run the stat
+list_test <- df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p) %>%
   split(f = .$expertAnno.l1)
 
-list_plot <- pmap(list(lit_df,names(lit_df)),function(df,nm){
-  test <- df %>%
-    finalfit::coefficient_plot(
-      dependent = dependent4,
-      explanatory = explanatory4)
-  plot <- patchwork::wrap_elements(test) + ggtitle(nm)
-  return(plot)
-})
+lapply(list_test,function(test){
+  cor.test(test$HIF1A,test$DNMT3A) %>%
+    broom::tidy()
+}) %>%
+  bind_rows(.id = "cell_type")
 
-# save the plots
-pdf("../../out/image/31_model_DNMT3A_splitCellType.pdf",width = 10,height = 5)
-list_plot
-dev.off()
+# try to split by treatment
+df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p) %>%
+  ggplot(aes(x = HIF1A,y = DNMT3A)) + geom_point() + theme_bw() + geom_smooth(method = "lm") + facet_wrap(~treat_full,scales="free") + theme(strip.background = element_blank())
+ggsave("../../out/image/31_correlation_HIF_DNMT_SplitTreat.pdf",width = 9,height = 6)
+
+# run the stat
+list_test2 <- df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p) %>%
+  split(f = .$treat_full)
+
+lapply(list_test2,function(test){
+  cor.test(test$HIF1A,test$DNMT3A) %>%
+    broom::tidy()
+}) %>%
+  bind_rows(.id = "treat_full")
+
+df_avg3 %>%
+  select(-avg_exp) %>%
+  pivot_wider(names_from = gene,values_from = avg_exp_log1p) %>%
+  ggplot(aes(x = HIF1A,y = DNMT3A)) + geom_point(aes(col=expertAnno.l1)) + theme_bw() + geom_smooth(method = "lm") + facet_wrap(~treat_full,scales="free") + theme(strip.background = element_blank())
+ggsave("../../out/image/31_correlation_HIF_DNMT_SplitTreat2.pdf",width = 10,height = 6)
+
+df_avg3 %>%
+  ggplot(aes(x = expertAnno.l1,y = avg_exp_log1p)) + 
+  geom_boxplot(outlier.shape = NA) +
+  facet_wrap(~gene,ncol=1,scales="free") +
+  geom_point(position = position_jitter(width = 0.2),shape = 1) + theme_bw() + theme(strip.background = element_blank(), axis.text.x = element_text(angle = 45,hjust = 1))
+ggsave("../../out/image/31_boxplot_HIF_DNMT_SplitGene.pdf",width = 4,height = 6)

@@ -17,3 +17,6 @@ resources/
 .Rproj.user
 .Ruserdata
 *.vcf.gz
+*.out
+*.log
+*.err
