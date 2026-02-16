@@ -12,6 +12,7 @@ library(finalfit)
 library(cowplot)
 library(patchwork)
 library(Nebulosa)
+library(ggExtra)
 
 # read in the dataset -----------------------------------------------------
 data.combined <- readRDS("../../out/object/sobj_processed_donor.rds")
@@ -616,3 +617,22 @@ df_avg3 %>%
   facet_wrap(~gene,ncol=1,scales="free") +
   geom_point(position = position_jitter(width = 0.2),shape = 1) + theme_bw() + theme(strip.background = element_blank(), axis.text.x = element_text(angle = 45,hjust = 1))
 ggsave("../../out/image/31_boxplot_HIF_DNMT_SplitGene.pdf",width = 4,height = 6)
+
+# martina suggested to run a cell-wise correlation for the expression of the two genes in MG cells only
+data.combined_subMG <- subset(data.combined,subset = harmonized_donor2 %in% c("donRR16","donRR24","donRR25") & treat != "TBHP" & expertAnno.l1 == "MG")
+DimPlot(data.combined_subMG)
+
+# pull the normalized expression
+df_exp <- FetchData(object = data.combined_subMG,vars = c("HIF1A","DNMT3A")) %>%
+  rownames_to_column("barcode")
+
+# add the metadata from the barcodes
+df_exp_full <- df_exp %>%
+  left_join(data.combined@meta.data,by=c("barcode" = "full_barcode"))
+
+p <- df_exp_full %>%
+  ggplot(aes(x=HIF1A,y=DNMT3A)) + geom_point(alpha = 0.1) + theme_bw() + geom_smooth(method = "lm")
+ggMarginal(p, type = "histogram")
+
+# tests the correlation
+cor.test(df_exp_full$HIF1A,df_exp_full$DNMT3A)
