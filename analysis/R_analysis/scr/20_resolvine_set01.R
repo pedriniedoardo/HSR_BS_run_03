@@ -20,7 +20,7 @@ DimPlot(data.combined,label = T,raster = T,group.by = "harmonized_donor2")
 # str_subset(rownames(data.combined),pattern = "HIF")
 # define the gene of interest GOI
 # GOI <- c("Irf7","Ddx58")
-GOI <- c("FPR2", "CMKLR1","GPR32","GPR18","GPR37","LGR6","LTB4R","RORA")
+GOI <- c("FPR2", "CMKLR1","GPR32","GPR18","GPR37","LGR6","LTB4R","RORA","GPR101")
 # set_02 <- c("ABCC1", "AKR1C3", "ALOX12", "ALOX15", "ALOX5", "CBR1", "CYP1A2", "CYP2C8", "CYP2C9", "CYP2D6", "CYP2E1", "CYP3A4", "CYP4F2", "CYP4F3", "DPEP1", "DPEP2", "DPEP3", "EPHX1", "EPHX2", "EPHX3", "GGT1", "GGT2", "GGT5", "GPX2", "GPX4", "GSTM4", "HPGDS", "LTA4H", "LTC4S", "PTGDS", "PTGES", "PTGES2", "PTGIS", "PTGS1", "PTGS2", "TBXAS1", "TXN")
 
 table(data.combined@meta.data$expertAnno.l1)
@@ -200,6 +200,24 @@ df_avg |>
 # scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
 # ggsave("../../out/image/06_dotplot_annotationConfident_GLP1R_expressionAvg_treatFull.pdf",width = 9,height = 9)
 ggsave("../../out/image/20_avgExpSplit_annotationConfident_set01.pdf",width = 12,height = 10)
+
+# Valerio asked to show onlyt he BASELINE and CSF groups
+df_avg |>
+  filter(treat %in% c("BASELINE","CSF.ctrl","CSF.MS")) %>%
+  # ggplot(aes(x=NMDA_time,y=count)) + 
+  ggplot(aes(x=treat_full,y=avg_exp))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_point(position = position_jitter(width = 0.1),alpha = 0.6)+
+  # geom_col()+
+  # facet_wrap(~cell_type2,scales = "free")+
+  theme_bw()+theme(axis.text.x = element_text(hjust = 1,angle = 90))+
+  theme(strip.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA))+
+  facet_grid(gene~expertAnno.l1,scales = "free")
+# scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
+# ggsave("../../out/image/06_dotplot_annotationConfident_GLP1R_expressionAvg_treatFull.pdf",width = 9,height = 9)
+ggsave("../../out/image/20_avgExpSplit_annotationConfident_set01_02.pdf",width = 12,height = 10)
+
 
 # try to keep the same scale
 # calculate the median per annotation
