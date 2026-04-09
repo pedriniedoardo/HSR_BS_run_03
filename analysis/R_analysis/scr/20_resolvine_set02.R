@@ -218,6 +218,24 @@ df_avg |>
 # ggsave("../../out/image/06_dotplot_annotationConfident_GLP1R_expressionAvg_treatFull.pdf",width = 9,height = 9)
 ggsave("../../out/image/20_avgExpSplit_annotationConfident_set02_02.pdf",width = 12,height = 40)
 
+# Valerio asked to add the colors
+df_avg |>
+  filter(treat %in% c("BASELINE","CSF.ctrl","CSF.MS")) %>%
+  # ggplot(aes(x=NMDA_time,y=count)) + 
+  ggplot(aes(x=treat_full,y=avg_exp))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_point(aes(fill = treat_full),position = position_jitter(width = 0.1),alpha = 0.6,shape = 21)+
+  # geom_col()+
+  # facet_wrap(~cell_type2,scales = "free")+
+  theme_bw()+theme(axis.text.x = element_text(hjust = 1,angle = 90))+
+  theme(strip.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA))+
+  facet_grid(gene~expertAnno.l1,scales = "free") +
+  scale_fill_manual(values = c("white","blue","orange","red"))
+# scale_fill_viridis_c(option = "plasma",name="log10 number \nof cells")
+# ggsave("../../out/image/06_dotplot_annotationConfident_GLP1R_expressionAvg_treatFull.pdf",width = 9,height = 9)
+ggsave("../../out/image/20_avgExpSplit_annotationConfident_set02_02_custom.pdf",width = 12,height = 40)
+
 # try to keep the same scale
 # calculate the median per annotation
 df_avg_summary <- df_avg %>%
