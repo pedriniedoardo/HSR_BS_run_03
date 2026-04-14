@@ -185,6 +185,21 @@ df_avg |>
   facet_wrap(~gene,scales = "free_y")
 ggsave("../../out/image/20_avgExp_annotationConfident_set02.pdf",width = 18,height = 15)
 
+# valerio asked to add the color to the points following the cluster color ID
+df_avg |>
+  # ggplot(aes(x=NMDA_time,y=count)) + 
+  ggplot(aes(x=expertAnno.l1,y=avg_exp))+
+  geom_boxplot(outlier.shape = NA)+
+  geom_point(aes(fill = expertAnno.l1),position = position_jitter(width = 0.1),alpha = 0.6,shape = 21)+
+  # geom_col()+
+  # facet_wrap(~cell_type2,scales = "free")+
+  theme_bw()+
+  theme(axis.text.x = element_text(hjust = 1,angle = 90))+
+  theme(strip.background = element_blank(),
+        panel.border = element_rect(colour = "black", fill = NA))+
+  facet_wrap(~gene,scales = "free_y")
+ggsave("../../out/image/20_avgExp_annotationConfident_set02_custom.pdf",width = 18,height = 15)
+
 # plot splitting by treat full
 df_avg |>
   # ggplot(aes(x=NMDA_time,y=count)) + 
